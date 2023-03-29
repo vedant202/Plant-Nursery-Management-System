@@ -1,0 +1,82 @@
+.container{
+	min-height:100vh;
+
+}
+.contact{
+    margin-top: 3.53em;
+}
+.ct_bgimg img{
+	overflow: hidden;
+    background-repeat: no-repeat;
+    display: block;
+    max-width:100%;
+    object-fit: contain;
+    height: 298px;
+}
+
+.box{
+	display:flex;
+	width:100%;
+	justify-content:center;
+	align-items:center;
+	    margin-top: 37px;
+    margin-bottom:3em;
+
+}
+.col1{
+	
+}
+
+.input_field{
+	width:40%;
+/*	background-color: transparent;*/
+        border: 2px solid #e4e5d7cf;
+    margin-bottom:10px;
+    border-radius: 0;
+	    width: 30em;
+    height: 3.5em;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+.c_input_field{
+	width:40%;
+/*	background-color: transparent;*/
+        border: 2px solid #e4e5d7cf;
+    margin-bottom:10px;
+    border-radius: 0;
+	    width: 37em;
+    height: 7.5em;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+.contact_head h2{
+	font-size:35px;
+	font-family:outfit;
+	font-weight:400;
+}
+
+.contact_head{
+	margin-bottom:30px;
+}
+
+.col2 img{
+	    width: 21em;
+    margin-left: 3em;
+}
+
+.btn{
+	    width: 19em;
+    height: 3em;
+    font-size: 15px;
+    color:white;
+    background-color:#7d8035;
+}
+
+form{
+	    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}

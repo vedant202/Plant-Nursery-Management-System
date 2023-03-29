@@ -1,0 +1,146 @@
+.navbar{
+	display: flex;
+    background-color: #7d8035;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    height: 56px;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+
+}
+
+.logo{
+	    font-size: 30px;
+	    font-weight: bold;
+	    cursor: pointer;
+}
+
+.search_input{
+	font-weight: 400;
+    color: #222;
+    font-size: 21px;
+    font-family: arial;
+    width: 350px;
+    display: inline-block;
+    height: 40px;
+    border: 1px solid #bbb;
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+    background: #fdfdfd;
+    padding-left: 11px;		
+
+}
+
+.search_box{
+	align-items: center;
+	display: flex;
+}
+
+.serach_btn{
+    cursor: pointer;
+    width: 40px;
+    border-radius: 0 4px 4px 0;
+/*    background: #e87325;*/
+    border: 1px solid #e87325;
+/*	border: none;*/
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    height: 41px;	
+}
+
+.serach_btn:hover {
+	box-shadow: 2px 2px;
+}
+
+.serach_btn img{
+	width: 28px
+
+}
+
+.main ul{
+	display: flex;
+
+}
+
+.main ul li{
+	list-style: none;
+	padding: 10px;
+	
+	
+}
+
+.main ul li a{
+	text-decoration: none;	
+	color: white;
+}
+
+.main ul li a:hover{
+	color: #e87325;
+	
+}
+
+.uBC img{
+    width: 25px;
+    border-radius: 9px;
+}
+
+.userButton .uBC{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.uBC p:hover {
+    color:#e87325;
+}
+
+.dgBox{
+    background-color: white;
+    min-width: 230px;
+    position: absolute;
+    top: 55px;
+    right: 16px;
+    font-size: 17px;
+    font-weight: 470;
+    
+}
+
+.dgBox_ul{
+    display:none;
+   /* display: flex;
+    flex-direction: column;*/
+}
+
+.dgBox_li{
+    list-style:none;
+    text-align:center;
+    text-align: center;
+    padding: 3px 0px 11px 0px;
+    border-bottom: 1px solid #8080805c;
+
+}
+
+.dgBox_li :hover{
+    background-color: #80808014;
+}
+.dgBox_li a{
+    text-decoration:none;
+    color:black;
+}
+/*
+.userButton:hover .dgBox ul{
+    display:block;
+}
+*/
+
+/*.dgBox:hover {
+    display:block;
+}*/
+

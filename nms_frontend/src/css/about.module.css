@@ -1,0 +1,49 @@
+.container{
+	min-height:100vh;
+
+}
+.about{
+    margin-top: 3.53em;
+}
+.abt_bgimg img{
+	overflow: hidden;
+    background-repeat: no-repeat;
+    display: block;
+    max-width:100%;
+    object-fit: contain;
+    height: 298px;
+}
+.cont{
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	    margin-top: 2em;
+
+}
+.col1{
+	width:40%;
+}
+
+.col1_head{
+    margin-bottom: 21px
+}
+
+.col1_head h2{
+	font-size: 36px;
+    letter-spacing: -.02em;
+    line-height: 45px;
+    font-family: Outfit;
+    color: #323232;
+    font-weight: 400;
+}
+
+.col1_para p{
+	font-size: 22px;
+    line-height: 22px;
+    color: #114c36b8;
+    font-weight: 300;
+    font-family: Outfit;
+    margin-bottom:15px;
+    letter-spacing: 0.5px;
+    word-spacing: 3px;
+}

@@ -1,0 +1,147 @@
+.home{
+/*    position:relative;*/
+    margin-top:3.5em;
+    background-color:#f8f8f8;
+}
+
+@keyframes slideInLeft {
+        0% {
+          transform: scale(1.0)
+        }
+        100% {
+          transform: scale(1.5);
+        }
+      }
+
+.bg_img img{
+    overflow: hidden;
+    background-repeat: no-repeat;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+/*    height: 100%;*/
+/*    position: absolute;*/
+    top: 0;
+    left: 0;
+/*    transform:scale(1.0);*/
+/*    transition:2s ease-in-out;*/
+    animation: 1s ease-out 0s 1 slideInLeft;
+}
+.main_c{
+/*    position: absolute;*/
+    top: 262px;
+    padding: 0 5rem;
+    margin-top: 32px;
+}
+.main_c h1{
+    margin-bottom: 20px;
+    font-size: 37px;
+    font-weight: 500;
+}
+
+.t1{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 0 5rem;
+}
+
+.t1 h2{
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: -.02em;
+    font-weight: 400;
+    font-family: Outfit,sans-serif!important;
+}
+
+
+.rows{
+/*    position: absolute;*/
+    top: 31em;
+    width: 100%;
+}
+.row{
+    width:100%;
+    margin-bottom:2em;
+    margin-top: 41px;   
+}
+.main_cards{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.card_header img{
+    width: 281px;
+}
+
+.card{
+    max-width: 300px;
+    width: 290px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_main1{
+        font-size: 22px;
+    line-height: 26px;
+    font-weight: 500;
+    font-family: Outfit,sans-serif!important;
+    margin-top: 17px;
+    margin-bottom: 6px;
+}
+
+.card_main2{
+    width:100%;
+}
+.card_main2 .price{
+    float: left;
+    margin-left: 16px;
+    color: #7d8035;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.card_main2 .rating{
+    float:right;
+    margin-right:16px;
+}
+
+.card_footer{
+    width: 100%;
+    margin-top: 12px;
+    background-color: #7d8035;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    transition:.5s ease transform .2s ease;
+}
+
+.card_footer :hover {
+    background-color:white;
+    color:#7d8035;
+}
+.card_button :hover {
+    background-color:white;
+    color:#7d8035;
+}
+
+
+.card_button{
+    line-height: 20px;
+    font-size: 19px;
+    letter-spacing: .1em;
+    font-weight: 400;
+    font-family: Outfit;
+    background-color: #7d8035;
+    color: white;
+    border:none;
+    cursor:pointer;
+}
+
+
+
+

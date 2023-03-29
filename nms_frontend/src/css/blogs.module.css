@@ -1,0 +1,62 @@
+.Blogs{
+
+	margin-top: 5em;
+	
+	min-height:80vh;
+}
+.head{
+	padding: 0 5rem;
+}
+.head h1{
+	font-weight: 480;
+    margin-bottom: 0.7em;
+}
+.mc{
+	width:100%;
+}
+.rows{
+	width:100%;
+    margin-top: 2em;	
+    margin-bottom:2em;
+}
+
+.row{
+	display:flex;
+	justify-content: space-evenly;
+	width:100%;
+	align-items:center;
+	margin-bottom:2em;
+}
+
+.card{
+    width: 590px;
+    height:582.3px;
+}
+.card_header{
+    margin-bottom: 12px;
+}
+.card_header img{
+    object-fit: contain;
+    width: 580px;
+
+}
+
+.card_Title h2{
+	font-size:20px;
+	font-weight:500;
+    letter-spacing: 1px;
+    margin-top: 16px;
+    margin-bottom: 9px;
+
+}
+.b_date{
+	margin-bottom:15px;
+	font-size:15px;
+	color:#212326BF;
+	font-family: "Josefin Sans", sans-serif;
+}
+.b_para{
+	    color: #09090a87;
+    font-weight: 500;
+    margin-bottom: 19px;
+}
