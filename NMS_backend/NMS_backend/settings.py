@@ -16,6 +16,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -37,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'corsheaders',
+    'phone_field',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +53,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+
+AUTH_USER_MODEL = 'core.User'
+
+REST_FRAMEWORK ={'DEFAULT_PERMISSION_CLASSES': [   'rest_framework.permissions.AllowAny' ]}
+
+CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'NMS_backend.urls'
 
@@ -81,7 +99,7 @@ DATABASES = {
 
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'stockapp_db',  
+        'NAME': 'nmsdb',  
         'USER': 'root',  
         'PASSWORD': 'aryan@222',  
         'HOST': '127.0.0.1',  
