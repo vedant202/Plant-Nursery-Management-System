@@ -68,11 +68,11 @@ const Navbar = ()=>{
 									</li>
 
 									<li className={styles.dgBox_li}>
-										<Link to="/signup"><span>Signup</span></Link>
+										<Link to="/register"><span>Signup</span></Link>
 									</li>
 
 									<li className={styles.dgBox_li}>
-										<Link to="/orders"><span>My Orders</span></Link>
+										<Link to="/OrderPage"><span>My Orders</span></Link>
 									</li>
 								</ul>
 							</div>

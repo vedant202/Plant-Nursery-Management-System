@@ -1,58 +1,8 @@
-.home{
+.Order{
 /*    position:relative;*/
-    margin-top:3.5em;
+    margin-top:5.5em;
     background-color:#f8f8f8;
 }
-
-@keyframes slideInLeft {
-        0% {
-          transform: scale(1.0)
-        }
-        100% {
-          transform: scale(1.5);
-        }
-      }
-
-.bg_img img{
-    overflow: hidden;
-    background-repeat: no-repeat;
-    display: block;
-    max-width: 100%;
-    width: 100%;
-/*    height: 100%;*/
-/*    position: absolute;*/
-    top: 0;
-    left: 0;
-/*    transform:scale(1.0);*/
-/*    transition:2s ease-in-out;*/
-    animation: 1s ease-out 0s 1 slideInLeft;
-}
-.main_c{
-/*    position: absolute;*/
-    top: 262px;
-    padding: 0 5rem;
-    margin-top: 32px;
-}
-.main_c h1{
-    margin-bottom: 20px;
-    font-size: 37px;
-    font-weight: 500;
-}
-
-.t1{
-    margin-top: 3em;
-    margin-bottom: 3em;
-    padding: 0 5rem;
-}
-
-.t1 h2{
-    font-size: 36px;
-    line-height: 45px;
-    letter-spacing: -.02em;
-    font-weight: 400;
-    font-family: Outfit,sans-serif!important;
-}
-
 
 .rows{
 /*    position: absolute;*/
@@ -66,20 +16,26 @@
 }
 .main_cards{
     display:flex;
-    justify-content:space-evenly;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     flex-wrap:wrap;
 }
 
 .card_header img{
-    width: 281px;
+        width: 168px;
+    align-items: center;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
 }
 
 .card{
-    max-width: 300px;
-    width: 290px;
+    max-width: 80vw;
+    width: 78vw;
     border: 2px solid black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom:20px;
@@ -92,6 +48,8 @@
     font-family: Outfit,sans-serif!important;
     margin-top: 17px;
     margin-bottom: 6px;
+    width: 53vw;
+    text-align:center;
 }
 
 .card_main2{
@@ -111,9 +69,10 @@
 }
 
 .card_footer{
-    width: 100%;
+        width: 406px;
+        margin-right:20px;
     margin-top: 12px;
-    background-color: #7d8035;
+/*    background-color: #7d8035;*/
     height: 3em;
     display: flex;
     align-items: center;
@@ -128,10 +87,14 @@
 }
 .card_button :hover {
     background-color:white;
+
     color:#7d8035;
 }
 
-
+.card_footer span{
+        text-align: center;
+    width: 43px;
+}
 .card_button{
     line-height: 20px;
     font-size: 19px;
@@ -142,8 +105,6 @@
     color: white;
     border:none;
     cursor:pointer;
+    width: 24px;
+    max-width: 100%;
 }
-
-
-
-

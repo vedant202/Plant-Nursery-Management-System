@@ -11,10 +11,16 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+# Base url to serve media files  
+MEDIA_URL = '/media/'  
+  
+# Path where media is stored  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 
@@ -34,8 +40,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
+
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -57,7 +64,7 @@ MIDDLEWARE = [
 ]
 
 
-AUTH_USER_MODEL = 'core.User'
+# AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK ={'DEFAULT_PERMISSION_CLASSES': [   'rest_framework.permissions.AllowAny' ]}
 
@@ -75,6 +82,7 @@ TEMPLATES = [
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
+
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -98,6 +106,7 @@ DATABASES = {
     # }
 
     'default': {  
+        'STORAGE_ENGINE': 'MyISAM / INNODB / ETC',
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'nmsdb',  
         'USER': 'root',  

@@ -12,6 +12,8 @@ import AllSeeds from "./pages/AllSeeds.js"
 import Blogs from "./pages/blogs/Blogs.js"
 import Register from "./pages/authFolder/Register.js"
 import Login from "./pages/authFolder/Login.js"
+import OrderPage from "./pages/OrderPage.js" 
+import ProductPage from "./pages/ProductPage.js"
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
               <Route path='contact' element={<Contact />} />
               <Route path='all_plants' element={<AllPlants />} />
               <Route path='all_seeds' element={<AllSeeds />} />
+              <Route path='OrderPage' element={<OrderPage />} />
+              <Route path='ProductPage' element={<ProductPage />} />
               <Route path='blogs' element={<Blogs />} />
               <Route path='register' element={<Register />} />
               <Route path='login' element={<Login />} />

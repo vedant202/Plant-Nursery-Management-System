@@ -1,5 +1,8 @@
 import styles from "../../css/login.module.css"
 import {useState} from 'react';
+import getCsrfToken from '../../components/CsrfTocken';
+
+import { useNavigate } from 'react-router-dom'
 
 const Login = ()=>{
 
@@ -7,7 +10,7 @@ const Login = ()=>{
 	const [pass,setPass] = useState("");
 	const [user,setUser] = useState(false);
 	const [error,setError] = useState(null);
-
+	const navigate = useNavigate()
 
 	const handleOnChange = (event)=>{
     
@@ -23,39 +26,33 @@ const Login = ()=>{
   }
 
   const handleSubmit = async(event)=>{
+  	
     // const {isUserLoggedIn,userAuthentication} = this.props
     console.log("Submit is clicked");
-    console.log("State",this.state)
     const data = {"u_name":u_name,"pass":pass,"user":user,"error":error}
-    // const response = await fetch('http://localhost:8000/handleLogin/',
-    // {
-    //   method:"POST",
-    //   headers:(
-    //     {'X-CSRFToken': await getCsrfToken()}
-    //   ),
-    //   body:JSON.stringify(data),
-    //   credentials:'include',
-    // })
+    const response = await fetch('http://localhost:8000/handleLogin/',
+    {
+      method:"POST",
+      headers:(
+        {'X-CSRFToken': await getCsrfToken()}
+      ),
+      body:JSON.stringify(data),
+      credentials:'include',
+    })
 
-    // const res_data = await response.json();
-    // console.log("Data",res_data)
+    const res_data = await response.json();
+    console.log("Data",res_data)
 
-//     if(res_data['response']==="success"){
-//       this.setState({user:true})
-//       this.setState({error:false})
-//       console.log("Login is successfull")
-//       // save the token and redirect
-//       localStorage.setItem('token',res_data["authToken"])
-// 
-//       // window.location.replace("http://localhost:3000/");
-//       // this.props.history.push("/")
-//       userAuthentication(true)
-//       console.log("After login "+isUserLoggedIn)
-//     }
-//     else{
-//       this.setState({user:false})
-//       this.setState({error:true})
-//     }
+    if(res_data['response']==="success"){
+     
+      console.log("Login is successfull")
+      // save the token and redirect
+      localStorage.setItem('token',res_data["authToken"])
+      navigate('/',{replace:true})
+      // window.location.replace("http://localhost:3000/");
+      // this.props.history.push("/")
+    }
+    
 
     
       
