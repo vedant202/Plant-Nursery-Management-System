@@ -31,7 +31,10 @@ class Plant_Products(models.Model):
 	product_desc = models.TextField()
 	product_img = models.ImageField(upload_to='images')
 	img_caption = models.CharField(max_length=200)
-
+	slug = models.CharField(max_length = 100,null=True,blank=True)
+	categeory = models.CharField(max_length = 100,null=True,blank=True)
+	img_url = models.URLField(max_length = 200,null=True,blank=True)
+	ProductDate = models.DateField(default=timezone.now)
 	def __str__(self):
 		return self.plant_name  
 

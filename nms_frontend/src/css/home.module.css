@@ -44,7 +44,11 @@
     margin-bottom: 3em;
     padding: 0 5rem;
 }
+.main_cards a{
+    text-decoration: none;
+    color: #7d8035;
 
+}
 .t1 h2{
     font-size: 36px;
     line-height: 45px;

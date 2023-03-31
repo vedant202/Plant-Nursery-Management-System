@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import getCsrfToken from '../components/CsrfTocken';
 import Parser from 'html-react-parser';
 import DOMPurify from 'dompurify'
+import { Link } from "react-router-dom";
 
 const Home = ()=>{
 	const [plantProds,setPlantProds] = useState([])
@@ -223,9 +224,11 @@ const Home = ()=>{
 						{plantProds.data? plantProds.data.map(i=>{
 							console.log(i)
 							return (
-								<div className={styles.card}> 
+								<Link to={"/ProductPage/"+i.id}>
+								<div className={styles.card} > 
 							<div className={styles.card_header}> 
 								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} />
+							{/* <img src={"D:/NurseryManagementSystem/nms_frontend/public/images"+"images/plant.jpg"} /> */}
 							</div>
 
 							<div className={styles.card_main1}>
@@ -243,6 +246,7 @@ const Home = ()=>{
 								<button className={styles.card_button}> Add to card </button>
 							</div>
  						</div>
+ 						</Link>
 								)
 							}):""}
 					{/* {ahtml} */}

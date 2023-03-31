@@ -26,9 +26,12 @@ def getAllPlantsProducts(request):
 		res = {"response":True,"data":getAllProducts,"msg":"success"}
 	elif request.method == "POST":
 		req_body = json.loads(request.body)
-		plant_name = req_body['data']['plantname']
-		plant = list(Plant_Products.objects.filter(plant_name=plant_name).values())
-		print("Request body ",req_body['data']['plantname'])
+		# plant_name = req_body['data']['plantname']
+		plant_name = req_body['id']
+		plant = list(Plant_Products.objects.filter(id=plant_name).values())
+		# plant = list(Plant_Products.objects.filter(plant_name=plant_name).values())
+		# print("Request body ",req_body['data']['plantname'])
+		print("Request body ",req_body['id'])
 		print("Database ",plant)
 
 		res = {"response":True,"data":plant,"msg":"success"}
