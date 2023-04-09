@@ -61,7 +61,7 @@ def getAllFlowerPlantsProducts(request):
 		res = {"response":True,"data":plant,"msg":"success"}
 
 	else:
-		res = {"response":False,data:"","msg":"failure"}
+		res = {"response":False,"data":"","msg":"failure"}
 	return JsonResponse(res);
 
 @csrf_exempt
@@ -85,7 +85,7 @@ def getAllSeedsProducts(request):
 		res = {"response":True,"data":plant,"msg":"success"}
 
 	else:
-		res = {"response":False,data:"","msg":"failure"}
+		res = {"response":False,"data":"","msg":"failure"}
 	return JsonResponse(res);
 
 @csrf_exempt
@@ -109,7 +109,7 @@ def getAllPlantCareProducts(request):
 		res = {"response":True,"data":plant,"msg":"success"}
 
 	else:
-		res = {"response":False,data:"","msg":"failure"}
+		res = {"response":False,"data":"","msg":"failure"}
 	return JsonResponse(res);
 
 @csrf_exempt
@@ -119,21 +119,22 @@ def getAllBlogs(request):
 		# plant_products = Plant_Products()
 		getAllblogs = list(Blogs.objects.all().values())
 		# getAllProducts = serializers.serialize('json', Plant_Products.objects.all())
-		print("Get all products ");
+		print("Get all Blogs ");
 		# print(list(Plant_Products.objects.all().values()))
 # ,"data":json.dumps({"plant_products":getAllProducts})
 		res = {"response":True,"data":getAllblogs,"msg":"success"}
 	elif request.method == "POST":
 		req_body = json.loads(request.body)
-		blog_name = req_body['data']['plantname']
-		blog = list(Blogs.objects.filter(plant_name=blog_name).values())
-		print("Request body ",req_body['data']['plantname'])
+		blog_name = req_body['slug']
+		print(blog_name)
+		blog = list(Blogs.objects.filter(slug=blog_name).values())
+		# print("Request body ",req_body['data']['plantname'])
 		print("Database ",blog)
 
-		res = {"response":True,"data":blog,"msg":"success"}
+		res = {"response":True,"data":blog[0],"msg":"success"}
 
 	else:
-		res = {"response":False,data:"","msg":"failure"}
+		res = {"response":False,"data":"","msg":"failure"}
 	return JsonResponse(res);
 
 @csrf_exempt
@@ -225,7 +226,34 @@ def handleLogin(request):
         
     return JsonResponse(res);
 
+@csrf_exempt
+def searchNavbar(request):
+	if request.method == "POST":
+		body = json.loads(request.body)
 
+		all_obj_list = []
+		plant_prods = list(Plant_Products.objects.all().values())
+		seed_prods = list(Seed_Products.objects.all().values())
+		flower_plant_prods = list(FlowerPlant_Products.objects.all().values())
+		all_obj_list.append(plant_prods)
+		all_obj_list.append(seed_prods)
+		all_obj_list.append(flower_plant_prods)
+		sear = body
+		# print("Search ",sear)
+		data = []
+
+		for l in all_obj_list:
+			for i in l:
+				# print(i)
+				if(sear == i['plant_name'][:len(sear)]):
+					data.append(i)
+					print(i['plant_name'])
+		print(data)
+		res = {"response":True,"data":data,"msg":"success"}
+	else:
+		res = {"response":False,"data":"","msg":"failure"}
+	return JsonResponse(res)
+# search()
 
 def handlelogout(request):
     logout(request)

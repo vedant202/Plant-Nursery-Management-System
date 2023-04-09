@@ -59,8 +59,7 @@ class Seed_Products(models.Model):
 	product_img = models.ImageField(upload_to='images')
 	img_caption = models.CharField(max_length=200)
 
-	def __str__(self):
-		return self.plant_name 
+	
 
 class PlantCare_Products(models.Model):
 	care_name = models.CharField(max_length = 100)
@@ -79,19 +78,21 @@ class Blogs(models.Model):
 	BlogDate = models.DateField(default=timezone.now)
 	author = models.CharField(max_length=50)
 	subpara = models.CharField(max_length = 200)
-	
+	slug = models.CharField(max_length = 100,null=True,blank=True)
 	para1 = models.TextField()
 	para2 = models.TextField()
 	para3 = models.TextField(blank=True)
 	para4 = models.TextField(blank=True)
 	para5 = models.TextField(blank=True)
+	img_url = models.URLField(max_length = 200,null=True,blank=True)
+	img_url2 = models.URLField(max_length = 200,null=True,blank=True)
+	img_url3 = models.URLField(max_length = 200,null=True,blank=True)
 	product_img1 = models.ImageField(upload_to='images',blank=True)
-	product_img2 = models.ImageField(upload_to='images',blank=True)
-	product_img3 = models.ImageField(upload_to='images',blank=True)
+	
 	img_caption = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.plant_name
+		return self.BlogTitle
 
 
 class Contact_db(models.Model):

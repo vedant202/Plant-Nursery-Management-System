@@ -14,6 +14,7 @@ import Register from "./pages/authFolder/Register.js"
 import Login from "./pages/authFolder/Login.js"
 import OrderPage from "./pages/OrderPage.js" 
 import ProductPage from "./pages/ProductPage.js"
+import BlogPage from "./pages/blogs/BlogPage.js"
 import { useState,useEffect } from 'react';
 
 
@@ -102,6 +103,8 @@ function App() {
               <Route path='OrderPage' element={<OrderPage cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
 
               <Route path='ProductPage/:id' element={<ProductPage cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
+
+              <Route path='BlogPage/:slug' element={<BlogPage />} />
 
               <Route path='blogs' element={<Blogs />} />
               <Route path='register' element={<Register />} />

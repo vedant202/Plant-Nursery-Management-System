@@ -162,7 +162,9 @@ const Home = ()=>{
 							</div>
 							
 							<div className={styles.card_footer}>
+							<Link to={"/all_plants"}>
 								<button className={styles.card_button}> View Plants </button>
+								</Link>
 							</div>
 						</div>
 						<div className={styles.card}>
@@ -175,12 +177,14 @@ const Home = ()=>{
 							</div>
 							
 							<div className={styles.card_footer}>
+							<Link to={"/all_seeds"}>
 								<button className={styles.card_button}> Seeds </button>
+								</Link>
 							</div>
 						</div>
 
 
-						<div className={styles.card}>
+						{/* <div className={styles.card}>
 							<div className={styles.card_header}>
 								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} />
 							</div>
@@ -192,9 +196,9 @@ const Home = ()=>{
 							<div className={styles.card_footer}>
 								<button className={styles.card_button}> View Pots & Planters </button>
 							</div>
-						</div>
+						</div> */}
 
-						<div className={styles.card}>
+						{/* <div className={styles.card}>
 							<div className={styles.card_header}>
 								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} />
 							</div>
@@ -204,9 +208,11 @@ const Home = ()=>{
 							</div>
 							
 							<div className={styles.card_footer}>
+							<Link to={"/all_seeds"}>
 								<button className={styles.card_button}> View Plant Care </button>
+								</Link>
 							</div>
-						</div>
+						</div> */}
 
 					</div>
 				</div>
@@ -227,7 +233,9 @@ const Home = ()=>{
 								<Link to={"/ProductPage/"+i.id}>
 								<div className={styles.card} > 
 							<div className={styles.card_header}> 
-								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} />
+								{/* <img src={process.env.PUBLIC_URL+"images/plant.jpg"} /> */}
+								{/* <img src={process.env.PUBLIC_URL+"images/plant.jpg"} /> */}
+								<img src={i.img_url} />
 							{/* <img src={"D:/NurseryManagementSystem/nms_frontend/public/images"+"images/plant.jpg"} /> */}
 							</div>
 

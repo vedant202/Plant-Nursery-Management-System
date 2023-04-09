@@ -1,0 +1,49 @@
+.Blogs{
+    /*    position:relative;*/
+    margin-top: 3.6em;
+    background-color:#f8f8f8;
+}
+.head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.head img{
+    overflow: hidden;
+    background-repeat: no-repeat;
+    display: block;
+    max-width: 100%;
+    width: 96%;
+    object-fit: cover;
+    height: 422px;
+}
+.mainContainer{
+    padding: 20px;
+}
+
+.contHead{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contHead h1{
+    font-size: 48px;
+    font-weight: 500;
+}
+.date{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.para1{
+    font-size: 17px;
+    letter-spacing: 0.06rem;
+    line-height: 31px;
+    color: #747272;
+    font-weight: 500;
+    margin-bottom: 10px;
+}

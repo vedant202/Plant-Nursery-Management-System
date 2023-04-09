@@ -23,6 +23,7 @@
 .row{
 	display:flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 	width:100%;
 	align-items:center;
 	margin-bottom:2em;
@@ -31,6 +32,7 @@
 .card{
     width: 590px;
     height:582.3px;
+	margin-bottom: 2em;
 }
 .card_header{
     margin-bottom: 12px;

@@ -32,11 +32,13 @@
 }
 .main_cards{
     display:flex;
+    flex-wrap: wrap;
     justify-content:space-evenly;
 }
 
 .card_header img{
     width: 281px;
+    height: 281px;
 }
 
 .card{
@@ -47,6 +49,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    margin-bottom: 30px;
 }
 
 .card_main1{
@@ -56,6 +60,7 @@
     font-family: Outfit,sans-serif!important;
     margin-top: 17px;
     margin-bottom: 6px;
+    text-decoration: none;
 }
 
 .card_main2{
@@ -73,7 +78,10 @@
     float:right;
     margin-right:16px;
 }
-
+a{
+    text-decoration: none;
+    color: #7d8035;
+}
 .card_footer{
     width: 100%;
     margin-top: 12px;
@@ -84,6 +92,7 @@
     justify-content: center;
     cursor:pointer;
     transition:.5s ease transform .2s ease;
+    text-decoration: none;
 }
 
 .card_footer :hover {

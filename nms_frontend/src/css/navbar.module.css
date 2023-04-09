@@ -118,6 +118,31 @@
     flex-direction: column;*/
 }
 
+.dgBox2{
+    background-color: white;
+    min-width: 413px;
+    position: absolute;
+    top: 57px;
+    left: 318px;
+    font-size: 17px;
+    font-weight: 470;
+    
+}
+
+.dgBox2 .dgBox_ul{
+    /* display:block; */
+   /* display: flex;
+    flex-direction: column;*/
+}
+
+.dgBox_ul li{
+    color: black;
+    list-style: none;
+    text-decoration: none;
+    margin-bottom: 6px;
+    margin-top: 5px;
+}
+
 .dgBox_li{
     list-style:none;
     text-align:center;
