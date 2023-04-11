@@ -15,6 +15,8 @@ import Login from "./pages/authFolder/Login.js"
 import OrderPage from "./pages/OrderPage.js" 
 import ProductPage from "./pages/ProductPage.js"
 import BlogPage from "./pages/blogs/BlogPage.js"
+import Checkout from './pages/Checkout';
+import PaymentGateway from './pages/PaymentGateway';
 import { useState,useEffect } from 'react';
 
 
@@ -29,6 +31,7 @@ function App() {
     try{
       if(localStorage.getItem("cart")){
       setCart(JSON.parse(localStorage.getItem("cart")))
+      saveCart(JSON.parse(localStorage.getItem("cart")))
     }
 
     } catch (error){
@@ -88,21 +91,23 @@ function App() {
       <div>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Navbar cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>}>
+            <Route path='/' element={<Navbar key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>}>
 
-              <Route index element={<Home cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal} />} />
+              <Route index element={<Home key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal} />} />
 
               <Route path='about' element={<About />} />
 
               <Route path='contact' element={<Contact />} />
 
-              <Route path='all_plants' element={<AllPlants cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
+              <Route path='all_plants' element={<AllPlants key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
 
-              <Route path='all_seeds' element={<AllSeeds cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal} />} />
+              <Route path='all_seeds' element={<AllSeeds key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal} />} />
 
-              <Route path='OrderPage' element={<OrderPage cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
+              <Route path='OrderPage' element={<OrderPage key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
 
-              <Route path='ProductPage/:id' element={<ProductPage cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
+              <Route path='ProductPage/:id' element={<ProductPage key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
+              <Route path='Checkout' element={<Checkout key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
+              <Route path='PaymentGateway' element={<PaymentGateway key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
 
               <Route path='BlogPage/:slug' element={<BlogPage />} />
 

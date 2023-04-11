@@ -32,6 +32,7 @@ urlpatterns = [
     path('handlelogout/',handlelogout,name="handlelogout"),
     path('handleRegister/',handleRegister,name="handleRegister"),
     path('searchNavbar/',searchNavbar,name="searchNavbar"),
+    path('checkoutInfo/',checkoutInfo,name="checkoutInfo"),
      # path('', include(('sampleapp.urls'), namespace='sampleapp')) 
     path('csrf/',csrf),
 ]

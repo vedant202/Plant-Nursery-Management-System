@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "../css/Order.module.css"
 import {useState} from 'react'
 const OrderPage = ({cart,addToCart,removeFromcart,clearCart,subTotal})=>{
@@ -135,15 +136,24 @@ const OrderPage = ({cart,addToCart,removeFromcart,clearCart,subTotal})=>{
 {/* 							</div> */}
 {/* 						</div> */}
 
+					<div> 
+						<span  className={styles.Total}><h1>SubTotal : ₹ {subTotal}</h1></span>
+					</div>
 						
 					</div>
+					
 					<div className={styles.button_row}>
+					<Link to={"/Checkout"}>
 						<div className={styles.button_row_card_footer}>
 								<button className={styles.button_row_card_button}>Checkout</button>
 						</div>
+
+						</Link>
 						<div className={styles.button_row_card_footer}>
+							
 								<button onClick={clearCart} className={styles.button_row_card_button}> Clear Cart </button>
 						</div>
+						
 					</div>
 				</div>
 			</div>

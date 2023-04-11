@@ -171,6 +171,31 @@ def saveContact(request):
 		res = {"response":False,data:"","msg":"failure"}
 	return JsonResponse(res);
 
+def checkoutInfo(request):
+	res = {"response":False,"data":"","msg":"failure"}
+	if request.method == "POST":
+		req_body = json.loads(request.body)
+		print(req_body['f_name'])
+		# req_body = req_body.data
+		f_name = req_body['f_name']
+		l_name = req_body['l_name']
+		mobno1 = req_body['mobno1']
+		mobno2 =  req_body['mobno2']
+		city = req_body['city']
+		state = req_body['state']
+		email = req_body['email']
+		pincode = req_body['pincode']
+		addr1 = req_body['addr1']
+		addr2 = req_body['addr2']
+		cart = req_body['cart']
+		subTotal = req_body['subTotal']
+		try:
+			checkout = CheckoutInfo(first_name = f_name,last_name=l_name,email=email,mobileno1=mobno1,mobileno2=mobno2,city=city,state=state,Address1=addr1,Address2=addr2,pincode=pincode,cart=cart)
+			checkout.save()
+			res = {"response":True,"data":"","msg":"success"}
+		except Exception as e:
+			print(e)
+	return JsonResponse(res);
 
 def handleRegister(request):
     key = "MySecretKeyForThisProject@1234"
@@ -196,6 +221,8 @@ def handleRegister(request):
             res = {"response":"failure","authToken":"","data":f"Error while registering user {e}"};
 
     return JsonResponse(res);
+
+
 
 def handleLogin(request):
     key = "MySecretKeyForThisProject@1234"
@@ -233,18 +260,18 @@ def searchNavbar(request):
 
 		all_obj_list = []
 		plant_prods = list(Plant_Products.objects.all().values())
-		seed_prods = list(Seed_Products.objects.all().values())
-		flower_plant_prods = list(FlowerPlant_Products.objects.all().values())
+		# seed_prods = list(Seed_Products.objects.all().values())
+		# flower_plant_prods = list(FlowerPlant_Products.objects.all().values())
 		all_obj_list.append(plant_prods)
-		all_obj_list.append(seed_prods)
-		all_obj_list.append(flower_plant_prods)
+		# all_obj_list.append(seed_prods)
+		# all_obj_list.append(flower_plant_prods)
 		sear = body
 		# print("Search ",sear)
 		data = []
 
 		for l in all_obj_list:
 			for i in l:
-				# print(i)
+				print(i)
 				if(sear == i['plant_name'][:len(sear)]):
 					data.append(i)
 					print(i['plant_name'])

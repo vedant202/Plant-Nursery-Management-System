@@ -1,0 +1,34 @@
+.paymentImg{
+    width: 100%;
+    text-align: center;
+}
+.paymentImg img{
+    width: 400px;
+}
+.Cont{
+    margin-top: 70px;
+}
+
+.Instruction h3{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.total{
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.Instruction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.Instruction li{
+    margin-bottom: 10px;
+}

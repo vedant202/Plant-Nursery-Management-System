@@ -56,9 +56,14 @@ class Seed_Products(models.Model):
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	product_details = models.JSONField(null=True)
 	product_desc = models.TextField()
-	product_img = models.ImageField(upload_to='images')
+	slug = models.CharField(max_length = 100,null=True,blank=True)
+	product_date = models.DateField(default=timezone.now)
+	# product_img = models.ImageField(upload_to='images')
+	img_url = models.URLField(max_length = 800,null=True,blank=True)
 	img_caption = models.CharField(max_length=200)
 
+	def __str__(self):
+		return self.seed_name
 	
 
 class PlantCare_Products(models.Model):
@@ -103,4 +108,58 @@ class Contact_db(models.Model):
     country = models.CharField(max_length=20)
     sex = models.CharField(max_length=10)
     desc = models.CharField(max_length=500)
+
+class CheckoutInfo(models.Model):
+	first_name = models.CharField(max_length=100)
+	last_name = models.CharField(max_length=100)
+	email = models.CharField(max_length=200)
+	mobileno1 = PhoneField(blank=True, help_text='Contact phone number')
+	mobileno2 = PhoneField(blank=True, help_text='Contact phone number')
+	city =  models.CharField(max_length=100)
+	state =  models.CharField(max_length=100)
+	Address1 = models.TextField()
+	Address2 = models.TextField()
+	pincode = models.CharField(max_length=20)
+	cart = models.JSONField()
+
+	def __str__(self) -> str:
+		return self.first_name +" "+ self.last_name
+
+# addr1
+# : 
+# "Ishwar nagar ,yavatmal"
+# addr2
+# : 
+# "address2"
+# cart
+# : 
+# {Shatavarplant: {…}}
+# city
+# : 
+# "yavatmal"
+# email
+# : 
+# "Aryantest@gmail.com"
+# f_name
+# : 
+# "Vedant"
+# l_name
+# : 
+# "Dhenge"
+# mobno1
+# : 
+# "09763366044"
+# mobno2
+# : 
+# "9208905622"
+# pincode
+# : 
+# "445001"
+# state
+# : 
+# "Maharashtra"
+# subTotal
+# : 
+# 400
+
 
