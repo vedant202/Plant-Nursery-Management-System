@@ -1,6 +1,14 @@
 import styles from "../css/contact.module.css"
+import { useNavigate } from 'react-router-dom';
 
 const Contact = ()=>{
+	const navigate = useNavigate()
+	if(localStorage.getItem('token')===null){
+
+		window.location.replace('/login')
+		// navigate('/login');
+		// return <Login></Login>
+	  }
 	return (
 
 		<>

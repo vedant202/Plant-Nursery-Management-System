@@ -1,12 +1,13 @@
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, useNavigate } from 'react-router-dom'
 import styles from '../css/navbar.module.css'
 import { useRef,useState,useEffect } from "react";
 import getCsrfToken from './CsrfTocken';
 
 const Navbar = ()=>{
-	
+	const navigate = useNavigate()
 	const [dis,setdis] = useState("none");
 	const [disnav,setdisNav] = useState("none");
+	const [isUserLoggedIn,setUserLoggedIn] = useState(false)
 	// const [submitClicked,setSubmitClicked] = useState(false)
 
 	const [searchValue,setSearchValue] = useState("")
@@ -17,6 +18,13 @@ const Navbar = ()=>{
 		setSearchValue(event.target.value)
 	}
 
+	const checkLogin = ()=>{
+		if(localStorage.getItem("token")){
+			setUserLoggedIn(true)
+		}else{
+			setUserLoggedIn(false)
+		}
+	}
 	const onSearch = (serachItem)=>{
 		console.log(serachItem)
 	}
@@ -40,7 +48,7 @@ const Navbar = ()=>{
 	}
 	useEffect(()=>{
 		console.log("Navbar use effect")
-		
+		checkLogin()
 		// checkProductsEmpty()
 	},[searchValue])
 
@@ -75,6 +83,13 @@ const Navbar = ()=>{
 
 		// dgBox_dropdown.style.display = "block";
 	}
+
+	const handleLogout = ()=>{
+		localStorage.removeItem("token")
+		window.location.replace('/login')
+	}
+
+	
 
 
 	return (
@@ -127,13 +142,17 @@ const Navbar = ()=>{
 						</div>
 						<div className={styles.dgBox}  >
 								<ul style={myStyle} className={styles.dgBox_ul}>
-									<li className={styles.dgBox_li}>
+									{isUserLoggedIn?<><li className={styles.dgBox_li}>
+										<Link onClick={handleLogout}><span>Logout</span></Link>
+									</li>
+
+									</>:<><li className={styles.dgBox_li}>
 										<Link to="/login"><span>Login</span></Link>
 									</li>
 
 									<li className={styles.dgBox_li}>
 										<Link to="/register"><span>Signup</span></Link>
-									</li>
+									</li></>}
 
 									<li className={styles.dgBox_li}>
 										<Link to="/OrderPage"><span>My Orders</span></Link>

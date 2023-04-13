@@ -4,10 +4,20 @@ import getCsrfToken from '../components/CsrfTocken';
 import Parser from 'html-react-parser';
 import DOMPurify from 'dompurify'
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
+// import Login from "./authFolder/Login";
 const Home = ()=>{
+	const navigate = useNavigate()
+	if(localStorage.getItem('token')===null){
+
+		// window.location.replace('/login')
+		navigate('/login');
+		// return <Login></Login>
+	  }
 	const [plantProds,setPlantProds] = useState([])
 	const [ahtml,setAHtml] = useState("")
+	let count=0;
 	function createMarkup(c) {
     return {__html: c};
   }
@@ -252,7 +262,11 @@ const Home = ()=>{
 				<div className={styles.row}>
 					<div className={styles.main_cards} id="cardsSet">
 						{plantProds.data? plantProds.data.map(i=>{
-							console.log(i)
+							
+							count = count +1;
+							if(count<9){
+								
+								console.log(i)
 							return (
 								<Link to={"/ProductPage/"+i.id}>
 								<div className={styles.card} > 
@@ -280,50 +294,12 @@ const Home = ()=>{
  						</div>
  						</Link>
 								)
+							}
+							
 							}):""}
 					{/* {ahtml} */}
 
- 						<div className={styles.card}> 
-							<div className={styles.card_header}> 
-								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} />
-							</div>
-
-							<div className={styles.card_main1}>
-								Broken Heart Plant
-							</div>
-							<div className={styles.card_main2}>
-								<span className={styles.price}>
-									₹ 999.0
-								</span>
-								<span className={styles.rating}>
-									5.0
-								</span>
-							</div>
-							<div className={styles.card_footer}>
-								<button className={styles.card_button}> Add to card </button>
-							</div>
- 						</div> 
-  
- 						<div className={styles.card}> 
-							<div className={styles.card_header}>
-								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} />
-							</div>
-
-							<div className={styles.card_main1}>
-								Broken Heart Plant
-							</div>
-							<div className={styles.card_main2}>
-								<span className={styles.price}>
-									₹ 999.0
-								</span>
-								<span className={styles.rating}>
-									5.0
-								</span>
-							</div>
-							<div className={styles.card_footer}>
-								<button className={styles.card_button}> Add to card </button>
-							</div>
- 						</div> 
+ 						
  						 
 					</div>
 				</div>
@@ -342,7 +318,7 @@ const Home = ()=>{
 				 {seedProds.data? seedProds.data.map(i=>{
 							console.log(i.img_url)
 							return (
-								<Link to={"/ProductPage/"+i.id}>
+								<Link to={"/SeedProductPage/"+i.slug}>
 								<div className={styles.card} > 
 							<div className={styles.card_header}> 
 							{/* <img src={process.env.PUBLIC_URL+"images/plant.jpg"} /> */}

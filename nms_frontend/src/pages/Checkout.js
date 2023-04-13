@@ -20,6 +20,13 @@ const Checkout = ({cart,addToCart,removeFromcart,clearCart,subTotal})=>{
 
     
     const navigate = useNavigate()
+    // const navigate = useNavigate()
+	if(localStorage.getItem('token')===null){
+
+		// window.location.replace('/login')
+		navigate('/login');
+		// return <Login></Login>
+	  }
     const handleSubmit = async()=>{
         const data = {
             f_name:f_name,

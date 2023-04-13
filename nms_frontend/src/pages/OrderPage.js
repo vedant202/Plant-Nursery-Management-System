@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import styles from "../css/Order.module.css"
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
+
 const OrderPage = ({cart,addToCart,removeFromcart,clearCart,subTotal})=>{
+	const navigate = useNavigate()
+	if(localStorage.getItem('token')===null){
+
+		window.location.replace('/login')
+		// navigate('/login');
+		// return <Login></Login>
+	  }
 	const [count,setCount] = useState(0)
 	let q = 0;
 	return (
@@ -47,28 +56,7 @@ const OrderPage = ({cart,addToCart,removeFromcart,clearCart,subTotal})=>{
 							</div>
 						</div>)
 					})}
-						<div className={styles.card}>
-							<div className={styles.card_header}>
-								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} />
-							</div>
-
-							<div className={styles.card_main1}>
-								Broken Heart Plant
-							</div>
-							<div className={styles.card_main2}>
-								<span className={styles.price}>
-									₹ 999.0
-								</span>
-								<span className={styles.rating}>
-									5.0
-								</span>
-							</div>
-							<div className={styles.card_footer}>
-								<button className={styles.card_button}> + </button> 
-								<span className={styles.qtyValues}>3</span>
-								<button className={styles.card_button}> - </button>
-							</div>
-						</div>
+						
 {/* 						<div className={styles.card}> */}
 {/* 							<div className={styles.card_header}> */}
 {/* 								<img src={process.env.PUBLIC_URL+"images/plant.jpg"} /> */}

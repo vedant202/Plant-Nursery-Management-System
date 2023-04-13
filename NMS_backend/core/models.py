@@ -29,7 +29,7 @@ class Plant_Products(models.Model):
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	product_details = models.JSONField(null=True)
 	product_desc = models.TextField()
-	product_img = models.ImageField(upload_to='images')
+	# product_img = models.ImageField(upload_to='images')
 	img_caption = models.CharField(max_length=200)
 	slug = models.CharField(max_length = 100,null=True,blank=True)
 	categeory = models.CharField(max_length = 100,null=True,blank=True)

@@ -48,7 +48,8 @@ const Login = ()=>{
       console.log("Login is successfull")
       // save the token and redirect
       localStorage.setItem('token',res_data["authToken"])
-      navigate('/',{replace:true})
+    //   navigate('/',{replace:true})
+	  window.location.replace('/')
       // window.location.replace("http://localhost:3000/");
       // this.props.history.push("/")
     }

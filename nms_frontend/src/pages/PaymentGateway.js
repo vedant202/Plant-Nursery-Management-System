@@ -1,6 +1,14 @@
 import styles from "../css/payment.module.css"
+import { useNavigate } from 'react-router-dom';
+
 const PaymentGateway = ({subTotal})=>{
-    
+    const navigate = useNavigate()
+	if(localStorage.getItem('token')===null){
+
+		// window.location.replace('/login')
+		navigate('/login');
+		// return <Login></Login>
+	  }
     return (
         <>
             <div className={styles.Cont}>

@@ -77,9 +77,9 @@ def getAllSeedsProducts(request):
 		res = {"response":True,"data":getAllProducts,"msg":"success"}
 	elif request.method == "POST":
 		req_body = json.loads(request.body)
-		seed_name = req_body['data']['plantname']
-		plant = list(Seed_Products.objects.filter(plant_name=seed_name).values())
-		print("Request body ",req_body['data']['plantname'])
+		slug = req_body['slug']
+		plant = list(Seed_Products.objects.filter(slug=slug).values())
+		# print("Request body ",req_body['data']['plantname'])
 		print("Database ",plant)
 
 		res = {"response":True,"data":plant,"msg":"success"}

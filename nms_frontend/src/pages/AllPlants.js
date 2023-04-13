@@ -68,7 +68,7 @@ const AllPlants = ()=>{
 								</span>
 							</div>
 							<div className={styles.card_footer}>
-								<button className={styles.card_button}> Add to card </button>
+								<button className={styles.card_button}> Add to cart </button>
 							</div>
  						</div>
  						</Link>

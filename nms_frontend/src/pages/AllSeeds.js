@@ -47,7 +47,7 @@ const AllSeeds = ()=>{
 				 {seedProds.data? seedProds.data.map(i=>{
 							console.log(i.img_url)
 							return (
-								<Link to={"/ProductPage/"+i.id}>
+								<Link to={"/SeedProductPage/"+i.slug}>
 								<div className={styles.card} > 
 							<div className={styles.card_header}> 
 							{/* <img src={process.env.PUBLIC_URL+"images/plant.jpg"} /> */}
@@ -67,7 +67,7 @@ const AllSeeds = ()=>{
 								</span>
 							</div>
 							<div className={styles.card_footer}>
-								<button className={styles.card_button}> Add to card </button>
+								<button className={styles.card_button}> Add to cart </button>
 							</div>
  						</div>
  						</Link>

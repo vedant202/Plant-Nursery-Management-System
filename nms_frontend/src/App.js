@@ -18,15 +18,20 @@ import BlogPage from "./pages/blogs/BlogPage.js"
 import Checkout from './pages/Checkout';
 import PaymentGateway from './pages/PaymentGateway';
 import { useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import SeedProductPage from './pages/SeedProductPage';
 
 
 
 function App() {
   const [cart,setCart] = useState({});
   const [subTotal,setSubTotal] = useState(0);
+  // const navigate = useNavigate()
+  
   // const [lqty,setLqty] = useState(JSON.parse(localStorage.getItem('cart'))[cart].qty)
   useEffect(()=>{
-
+    
+    
     console.log("Hey I am a useEffect from app.js")
     try{
       if(localStorage.getItem("cart")){
@@ -108,6 +113,7 @@ function App() {
               <Route path='ProductPage/:id' element={<ProductPage key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
               <Route path='Checkout' element={<Checkout key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
               <Route path='PaymentGateway' element={<PaymentGateway key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
+              <Route path='SeedProductPage/:slug' element={<SeedProductPage key={subTotal} cart={cart} addToCart={addToCart} removeFromcart={removeFromcart} clearCart={clearCart} subTotal={subTotal}/>} />
 
               <Route path='BlogPage/:slug' element={<BlogPage />} />
 
