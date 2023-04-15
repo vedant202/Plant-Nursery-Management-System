@@ -164,9 +164,9 @@ def getAllContacts(request):
 def saveContact(request):
 	if request.method == "POST":
 		data = json.loads(request.body)
-		con = Contact_db(first_name=data['f_name'],last_name=data['l_name'],email=data['email'],phone=data['m_no'],country=data['country'],sex=data['sex'],desc=data['desc'])
+		con = Contact_db(first_name=data['f_name'],last_name=data['l_name'],email=data['email'],phone=data['mobno1'],city=data['city'],state=data['state'],desc=data['comment'])
 		con.save()
-		es = {"response":True,"data":data['f_name'],"msg":"success"}
+		res = {"response":True,"data":data['f_name'],"msg":"success"}
 	else:
 		res = {"response":False,data:"","msg":"failure"}
 	return JsonResponse(res);

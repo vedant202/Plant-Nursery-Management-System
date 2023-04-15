@@ -105,9 +105,13 @@ class Contact_db(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.CharField(max_length=200)
     phone = PhoneField(blank=True, help_text='Contact phone number')
-    country = models.CharField(max_length=20)
-    sex = models.CharField(max_length=10)
+    city = models.CharField(max_length=40,null=True)
+    state = models.CharField(max_length=40,null=True)
     desc = models.CharField(max_length=500)
+    def __str__(self):
+	    return self.first_name + " "+ self.last_name
+    
+	
 
 class CheckoutInfo(models.Model):
 	first_name = models.CharField(max_length=100)
