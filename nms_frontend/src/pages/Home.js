@@ -267,6 +267,7 @@ const Home = ()=>{
 							if(count<9){
 								
 								console.log(i)
+							
 							return (
 								<Link to={"/ProductPage/"+i.id}>
 								<div className={styles.card} > 
@@ -296,7 +297,9 @@ const Home = ()=>{
 								)
 							}
 							
+							
 							}):""}
+							{count = 0}
 					{/* {ahtml} */}
 
  						
@@ -316,33 +319,37 @@ const Home = ()=>{
 						<div className={styles.row}>
 							<div className={styles.main_cards}>
 				 {seedProds.data? seedProds.data.map(i=>{
-							console.log(i.img_url)
-							return (
-								<Link to={"/SeedProductPage/"+i.slug}>
-								<div className={styles.card} > 
-							<div className={styles.card_header}> 
-							{/* <img src={process.env.PUBLIC_URL+"images/plant.jpg"} /> */}
-							<img src={i.img_url} />
-							{/* <img src={"D:/NurseryManagementSystem/nms_frontend/public/images"+"images/plant.jpg"} /> */}
-							</div>
+							count = count +1;
+							if(count<9){
+								console.log(i.img_url)
+								return (
 
-							<div className={styles.card_main1}>
-								{i.seed_name}
+									<Link to={"/SeedProductPage/"+i.slug}>
+									<div className={styles.card} > 
+								<div className={styles.card_header}> 
+								{/* <img src={process.env.PUBLIC_URL+"images/plant.jpg"} /> */}
+								<img src={i.img_url} />
+								{/* <img src={"D:/NurseryManagementSystem/nms_frontend/public/images"+"images/plant.jpg"} /> */}
+								</div>
+
+								<div className={styles.card_main1}>
+									{i.seed_name}
+								</div>
+								<div className={styles.card_main2}>
+									<span className={styles.price}>
+										₹ {i.price}
+									</span>
+									<span className={styles.rating}>
+										{i.reviews}
+									</span>
+								</div>
+								<div className={styles.card_footer}>
+									<button className={styles.card_button}> Add to card </button>
+								</div>
 							</div>
-							<div className={styles.card_main2}>
-								<span className={styles.price}>
-									₹ {i.price}
-								</span>
-								<span className={styles.rating}>
-									{i.reviews}
-								</span>
-							</div>
-							<div className={styles.card_footer}>
-								<button className={styles.card_button}> Add to card </button>
-							</div>
- 						</div>
- 						</Link>
-								)
+							</Link>
+									)
+							}
 							}):""}
  					{/* <div className={styles.rows}>
 						<div className={styles.row}>

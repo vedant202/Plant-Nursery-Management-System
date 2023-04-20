@@ -33,6 +33,7 @@
 .main_cards{
     display:flex;
     justify-content:space-evenly;
+    flex-wrap: wrap;
 }
 
 .card_header img{
@@ -48,6 +49,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 }
 
 .card_main1{

@@ -50,7 +50,7 @@ const Blogs = ()=>{
 								console.log(b)
 								return (<div className={styles.card}>
 									<div className={styles.card_header}>
-										<img src={process.env.PUBLIC_URL+"images/jasmine.png"}/>
+										<img src={blogs[b].img_url}/>
 									</div>
 
 									<div className={styles.card_main}>
